@@ -23,7 +23,8 @@ app.post('/messages', (req, res) =>{
 io.on('connection', (socket) =>{
     console.log('有人進來囉')
 })
-  
-const server = http.listen(3000,'127.0.0.1', ()=>{
-    console.log(`開始監聽`);
+
+const port = process.env.PORT || 3000;
+const server = http.listen(port, ()=>{
+    console.log(`開始監聽${port}`);
 });
